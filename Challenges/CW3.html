@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Premissions</title>
+    <style>
+        *{
+            background-color: rgb(219, 126, 219);
+            
+         }
+
+        #container{
+            margin: 0px auto;
+            width: 500px;
+            height:375px;
+            border: 10px #333 solid;
+        }
+
+        #videoElement{
+            width: 500px;
+            height:375px;
+            background-color: gray;
+        }
+
+    </style>
+</head>
+<body >
+    <div id="container">
+        <video autoplay="true" id="videoElement">
+        </video>
+    </div>
+    <script type="text/javascript">
+    var video=document.querySelector("#videoElement");
+    navigator.getUserMedia=navigator.getUserMedia||navigator.webkitGetUsermedia||navigator.mozGetUserMedia||navigator.mozGetUserMedia||navigator.oGetUserMedia;
+    if (navigator.getUserMedia) {
+        navigator.getUserMedia({video:true},handleVideo,videoError);
+
+    }
+    function handleVideo(stream){
+        video.src=window.URL.createObjectURL(stream);
+    }
+    function videoError(e){
+
+    }
+
+    </script>
+</body>
+</html>

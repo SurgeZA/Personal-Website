@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car</title>
+    <!-- <link rel="stylesheet" href="Style.css"> -->
+    <style>
+        body{
+    margin: 0;
+    background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    overflow-y:hidden;
+}
+
+.night{
+    height: 100vh;
+    width: 100%;
+    margin: 0%;
+    background: url("./assets/Img_1.png") ;
+    background-size: cover;
+    position: relative;
+    box-shadow: 1px 2px 60px rgba(
+        0,0,0,4);
+        overflow-x: hidden;
+}
+
+ .surface{
+        height: 140px ;
+        width: 250%;
+        background: url('./assets/Img_02.png') ;
+        display: block;
+        position: absolute;
+        bottom: 0%;
+        left: 0%;
+        background-repeat: repeat-x;
+        animation: moveRight 6s linear infinite;
+    
+    }
+.car{
+    position: absolute;
+    bottom: 5%;
+    left: 24%;
+    animation: suspension 1s linear infinite;
+}
+
+/* Animation */
+@keyframes moveRight{
+    100%{transform: translateX(-1500px)};
+}
+@keyframes suspension{
+    100%{
+        transform: translateY(-1px);
+    }
+    50%{
+        transform: translateY(1px);
+    }
+    0%{
+        transform: translateY(-1px);
+    }
+
+}
+  </style>
+
+</head>
+
+<body>
+    <bgsound src="https://open.spotify.com/track/7p4vHnYXkxlzvfePJVpcTr?si=e38bfc5a9c0e4c9e" loop = infinte>
+    <div class="night"></div>
+    <div class="surface"></div>
+    <div class="car">
+        <img src="./assets/Img_06.png" alt="">
+    </div>
+
+</body>
+
+</html>
